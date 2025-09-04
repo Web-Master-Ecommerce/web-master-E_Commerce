@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body{
+   
+  font-family: "Inter", sans-serif;
+}
+.fs-36{
+    font-size: 36px;
+}
+h2{
+    
+    line-height: 43.2px;
+    font-weight: 600;
+    color: #202435;
+    transition: all .2s;
+
+}
+h2:hover{
+    color: #155DFC;  
+}
+span{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -.1px;
+}
+p{
+    font-weight: 400; 
+    font-size:15px ;
+    line-height: 27px;
+}
