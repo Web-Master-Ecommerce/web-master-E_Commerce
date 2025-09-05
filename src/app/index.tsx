@@ -1,0 +1,12 @@
+export {default as Blog} from './Blogs/Blog';
+export {default as Login} from './Auth/Login/Login';
+export {default as Register} from './Auth/Register/Register';
+export {default as About} from './About/About';
+export {default as Compare} from './Compare/Compare';
+export {default as Contact} from './Contact/Contact';
+export {default as Shop} from './Shop/Shop';
+export {default as WishList} from './Wishlist/Wishlist';
+export {default as Cart} from './Cart/Cart';
+export {default as Home} from './Home/Home';
+export {default as Layouts} from './Layouts/Layout';
+export {default as Error} from './Error/ErrorPage';
