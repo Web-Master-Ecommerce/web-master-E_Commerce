@@ -8,6 +8,7 @@ export default function Best_Sellers_Container() {
           <Best_Seller_Aside />
         {/*Best Seler Section*/}
           <Best_Seller_Section />
+          
     </section>
   )
 }

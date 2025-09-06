@@ -1,5 +1,8 @@
 import Best_Sellers_Container from "./Best_Seler/Best_Sellers_Container";
 import Landing_Container from "./Landing/Landing_Container";
+import ProductSlider from './ProductSlider/ProductSlider.jsx'
+import Categories from '../Categories'
+import Cookies from './Cookies/Cookies'
 
 export default function HomePage_Container() {
   return (
@@ -7,7 +10,14 @@ export default function HomePage_Container() {
         {/*Landing Container*/}
         <Landing_Container />
         {/*BestSeller Container*/}
-        <Best_Sellers_Container />
+        {/* <Best_Sellers_Container /> */}
+
+
+       <Cookies/>
+        <ProductSlider/>
+        <Categories/>
+        
+
     </main>
   )
 }

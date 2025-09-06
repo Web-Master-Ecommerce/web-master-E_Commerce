@@ -20,7 +20,7 @@ function Categories() {
   ]
 
   return (
-    <div className="flex justify-center items-center bg-gray-50 min-h-screen">
+    <div className="flex justify-center items-center bg-gray-50 mt-8">
       <div
         className="
           grid grid-cols-5 grid-rows-2 gap-[1px] bg-gray-200 p-[1px]
