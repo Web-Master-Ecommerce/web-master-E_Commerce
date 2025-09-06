@@ -1,0 +1,37 @@
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    /* شكل الدائرة */
+    background: rgba(255, 255, 255, 0.7); /* خلفية بيضاء */
+    color: #333;                 /* لون السهم */
+    border-radius: 50%;            /* دايرة */
+    width: 40px;                   /* حجم الدايرة */
+    height: 40px;                  /* حجم الدايرة */
+    display: flex;                 /* عشان الأيقونة تتوسّط */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all .2s; 
+  }
+  
+  .arrow:hover{
+    background: #fff;  
+  }
+  .next {
+    right: 10px;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  .span1{
+    background: black !important; 
+  }
+  h1{
+    font-size: 60px;
+    font-weight:bolder
+   
+  }

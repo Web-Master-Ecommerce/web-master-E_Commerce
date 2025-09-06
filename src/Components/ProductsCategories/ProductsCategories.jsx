@@ -25,7 +25,7 @@ export default function Categories({ selectedCategories, handleCategoryChange , 
  
       <>
   {/* 🖥️ Desktop */}
-  <div className="hidden lg:block p-4 rounded-lg w-[25%]">
+  <div className="hidden lg:block p-4 rounded-lg w-[25%] ">
     {/* Categories */}
     <h2 className="text-[15px] leading-[18px] font-dosis text-[#202435] uppercase font-semibold text-left mb-3">
       Product Categories

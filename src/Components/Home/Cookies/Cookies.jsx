@@ -4,7 +4,7 @@ import img2 from '../../../../public/assets/Images/two.png'
 export default function Cookies() {
   return <>
 
-  <div className=' w-[90%] md:flex justify-between'>
+  <div className=' w-[90%] md:flex justify-between my-20'>
     
      {/* <img  src={img1}  alt="" className='rounded-3xl h-[180px] w-[49%] object-cover' /> */}
      <div className='rounded-3xl h-[160px] md:w-[49%]  bg-cover bg-center text-left flex items-center mb-4  md:mb-0  ' style={{ backgroundImage: `url("${img1}")` }}>
