@@ -3,21 +3,18 @@ import React from "react";
 function PromoSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-10">
-      {/* الصف الأول - عروض */}
       <div className="flex mb-[50px] m-auto gap-[20px] flex-wrap ">
         {[1, 2, 3].map((item) => (
           <div
             key={item}
             className="relative rounded-x1 overflow-hidden"
           >
-            {/* الصورة */}
+           
             <div className="relative rounded-2xl overflow-hidden md:flex-1/3  lg:flex-1/4 lg:max-w-[400px]">
              <img src={`/public/assets/Images/promo/promo${item}.png`} className="w-full h-60 object-cover" alt="Promo 1" />
-             {/* src={`/images/promo1.jpg${item}.png`} */}
-
             </div>
 
-            {/* النص */}
+           
             <div className="absolute top-[20px] lg:top-[28px] left-0  p-[20px] ">
               <p className="text-[#00B853] md:font-[500] md:text-[14px] ">
                 Weekend Discount 40%
@@ -32,14 +29,12 @@ function PromoSection() {
         ))}
       </div>
 
-      {/* الصف الثاني - منتجات */}
       <div className="flex gap-[20px] flex-wrap mb-[100px]">
         {[1, 2, 3].map((item) => (
           <div
             key={item}
             className="relative rounded-2xl overflow-hidden md:flex-1/3  lg:flex-1/4 lg:max-w-[400px] "
           >
-            {/* الصورة */}
             <div className="mb-[10px] rounded-b-2xl overflow-hidden">
               <img
                 src={`/public/assets/Images/promo/product${item}.png`}
@@ -48,7 +43,6 @@ function PromoSection() {
               />
             </div>
 
-            {/* النص */}
             <div className="p-4">
               <p className="text-[#9B9BB4] text-[13px] font-[300] uppercase my-[10px]">Grocery</p>
               <h3 className="text-base font-semibold text-gray-800">
