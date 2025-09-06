@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 function PromoSection() {
   return (
@@ -21,9 +23,15 @@ function PromoSection() {
               </p>
               <h3 className="text-[#3E445A] font-[600] text-[24px]">Natural Eggs</h3>
               <p className="text-[#9B9BB4] font-[400] text-[12px]">Eat one every day</p>
-              <button className="rounded-2xl my-[10px] bg-[#C2C2D3] px-[15px] py-[10px] text-white cursor-pointer">
+              {/* <button className="rounded-2xl my-[10px] bg-[#C2C2D3] px-[15px] py-[10px] text-white cursor-pointer">
                 Shop Now
-              </button>
+              </button> */}
+              <Link
+                to="/shop"
+                className="inline-block rounded-2xl my-[10px] bg-[#C2C2D3] px-[15px] py-[10px] text-white cursor-pointer"
+                >
+                Shop Now
+              </Link>
             </div>
           </div>
         ))}
