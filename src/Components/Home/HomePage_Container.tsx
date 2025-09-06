@@ -3,6 +3,7 @@ import Landing_Container from "./Landing/Landing_Container";
 import ProductSlider from './ProductSlider/ProductSlider.jsx'
 import Categories from '../Categories'
 import Cookies from './Cookies/Cookies'
+import PromoSection from "./PromoSection/PromoSection";
 
 export default function HomePage_Container() {
   return (
@@ -16,6 +17,8 @@ export default function HomePage_Container() {
        <Cookies/>
         <ProductSlider/>
         <Categories/>
+        <PromoSection />
+        
         
 
     </main>
