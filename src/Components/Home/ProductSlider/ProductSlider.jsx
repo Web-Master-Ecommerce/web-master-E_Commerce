@@ -10,6 +10,8 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { supabase } from '../../../client';
+import { Link } from 'react-router-dom';
+
 
 function NextArrow(props) {
 
@@ -113,10 +115,10 @@ export default function ProductSlider() {
   return (
     <>
     <div className='w-[90%]'>
-<div className='mt-2 flex justify-between'>
+    <div className='mt-2 flex justify-between'>
       <div className='text-start'>
-       <h1 className=' leading-6 uppercase text-[20px] font-semibold     text-black  font-dosis'>Featured Products</h1>
-       <h3 className='text-[#9B9BB4] text-[12px] font-inter leading-[18px]'>Do not miss the current offers until the end of March.</h3>
+       <h1 className=' leading-6 uppercase text-[20px] font-semibold my-3 py-3 text-black  font-dosis'>Featured Products</h1>
+       <h3 className='text-[#9B9BB4] text-[12px] font-inter leading-[18px] py-3'>Do not miss the current offers until the end of March.</h3>
      </div>
      <div className='border-[1px] border-[#D9D9E9]  rounded-[30px] w-[112px] h-[34px] flex justify-center items-center'>
         <p className='text-[#9B9BB4] cursor-pointer  text-[12px] font-medium leading-[18px]'>View All <span className="text-1xl w-[15px] ml-1">⟶</span></p>
@@ -126,7 +128,11 @@ export default function ProductSlider() {
     
 
       <Slider {...settings}>
-        {products.map((prod)=><div className=' px-2   py-3 transform transition duration-250 hover:scale-95 hover:cursor-pointer' key={prod._id}>
+
+        {products.map((prod)=><div className=' px-2   py-3 transform transition duration-250 hover:scale-95 hover:cursor-pointer'
+         key={prod._id}>
+          <Link to={`/details/${prod.id}`}>
+           
           <div className='shadow rounded-2xl px-3 pt-8  relative  '>
             <img src={prod.thumbnail} className='w-[194px] h-[174px] object-cover mt-2 ' alt="" />
             <div className='flex items-center justify-center bg-[#35AFA0] text-white text-[12px] rounded-[4px] w-[45px] h-6 absolute top-5 left-3'><p className='font-dosis !text-[12px] leading-3 font-semibold'>{prod.discountPercentage}%</p></div>
@@ -140,6 +146,8 @@ export default function ProductSlider() {
           </div>
           <button className='bg-[#FFCD00] mb-3 text-black w-full  h-[34px] text-[12px] lg:text-[12px] rounded-2xl hover:bg-[#ffcb22d4] transition-all font-inter font-medium cursor-pointer'>Add to Cart</button>
           </div>
+          </Link>
+          
           
 
         </div>)}

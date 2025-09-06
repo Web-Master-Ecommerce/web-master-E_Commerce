@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Middleware from '../middleware';
 import * as Pages from '.';
-
+import Details from'./../Components/Details/Details'
 function App() {
   return (
     <Routes>
@@ -12,6 +12,7 @@ function App() {
         <Route path="/compare" element={<Pages.Compare />} />
         <Route path="/blog" element={<Pages.Blog />} />
         <Route path="/contact" element={<Pages.Contact />} />
+        <Route path="/details/:id" element={<Details />} />
         <Route
           path="/wishlist"
           element={
