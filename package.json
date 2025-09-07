@@ -1,13 +1,16 @@
 {
   "name": "baket",
   "private": true,
+  "homepage": "https://Web-Master-Ecommerce.github.io/web-master-E_Commerce/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
@@ -16,6 +19,7 @@
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.11.0",
     "generate-react-cli": "^9.0.0",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.542.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
