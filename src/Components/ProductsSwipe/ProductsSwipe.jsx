@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { supabase } from '../../client';
 import img1 from '../../../public/assets/Images/food1.png'
+import { Link } from "react-router-dom"
 
 
 export default function ProductsSwipe({ selectedCategories , selectedBrands,selectedStocks,priceRange}) {
@@ -134,6 +135,7 @@ const currentProducts = filteredProducts.slice(startIndex, endIndex);
             className="w-full sm:w-1/2 md:w-1/3 px-1 py-1 lg:w-1/4 box-border"
             key={prod.id}
           >
+            <Link to={`/details/${prod.id}`}>
             <div className="shadow rounded-2xl  box-border  md:pl-4 pl-8 pt-8   relative pb-3 transform transition duration-250 hover:scale-95 hover:cursor-pointer ">
               <div className="flex flex-col items-center ">
                 <img
@@ -198,6 +200,7 @@ const currentProducts = filteredProducts.slice(startIndex, endIndex);
                 </div>
               </div>
             </div>
+            </Link>
           </div>
         ))}
     </div>

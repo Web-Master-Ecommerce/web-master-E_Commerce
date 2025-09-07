@@ -13,3 +13,11 @@
   --color-primary: var(--primary);
   --color-fontcolor: var(--fontcolor);
 }
+
+.active{
+  background-color: #35afa0;
+
+  padding: 5px;
+  border:#0aa17b solid 1px ;
+  border-radius: 8px;
+}

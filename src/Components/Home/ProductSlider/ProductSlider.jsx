@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom';
 
 
 function NextArrow(props) {
+  
 
   const { className, style, onClick } = props;
   return (
@@ -41,6 +42,7 @@ function PrevArrow(props) {
 }
 
 export default function ProductSlider() {
+
 
   const [products,setProducts]=useState([]);
 
@@ -152,6 +154,8 @@ export default function ProductSlider() {
 
         </div>)}
       </Slider>
+
+      
 
     </div>
     

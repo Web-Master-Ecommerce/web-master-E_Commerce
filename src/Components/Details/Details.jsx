@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../client';
 import Slider from "react-slick";
-import Spinner from '../Spinner/Spinner';
+// import Spinner from '../Spinner/Spinner';
 import { useParams } from "react-router-dom";
 
 export default function Details() {
+  
   let { id } = useParams(); // هيجيب id من الرابط
   console.log('id is', id);
 
@@ -30,7 +31,7 @@ export default function Details() {
     }
   }, [products, id]);
 
-  if (!currentProduct) return <Spinner />;
+  if (!currentProduct) return <div>loading</div>;
 
   // منتجات مشابهة
   const relatedProducts = products.filter(
@@ -69,15 +70,17 @@ export default function Details() {
         <div className="flex flex-col lg:flex-row gap-6 w-full">
           {/* الصورة */}
           <div className="flex justify-center lg:justify-start w-full lg:w-1/2">
+          
             <img
               src={currentProduct.thumbnail}
               alt={currentProduct.title}
-              className="w-full lg:w-3/4 h-[400px] rounded-2xl border shadow-md object-cover"
+              className="w-full lg:w-3/4 h-[400px] rounded-2xl border shadow-md object-contain "
             />
           </div>
 
           {/* التفاصيل */}
           <div className="propdetail border shadow-md p-4 flex flex-col gap-3 w-full lg:w-1/2">
+          
             <h3 className="text-xl font-bold">{currentProduct.title}</h3>
             <span className="text-base text-gray-700">
               Price: ${currentProduct.price}
@@ -133,7 +136,7 @@ export default function Details() {
                 <img
                   src={product.thumbnail}
                   alt={product.title}
-                  className="w-full h-40 object-cover rounded-md mb-2"
+                  className="w-full h-40 object-contain rounded-md mb-2"
                 />
                 <h4 className="text-sm font-semibold text-center">{product.title}</h4>
                 <p className="text-gray-700 text-sm text-center">$ {product.price}</p>

@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Middleware from '../middleware';
 import * as Pages from '.';
 import Details from'./../Components/Details/Details'
+import ViewProducts from "../Components/ViewProducts/ViewProducts";
+
 function App() {
   return (
     <Routes>
@@ -13,6 +15,9 @@ function App() {
         <Route path="/blog" element={<Pages.Blog />} />
         <Route path="/contact" element={<Pages.Contact />} />
         <Route path="/details/:id" element={<Details />} />
+        <Route path="/viewProducts" element={<ViewProducts />} />
+
+
         <Route
           path="/wishlist"
           element={
