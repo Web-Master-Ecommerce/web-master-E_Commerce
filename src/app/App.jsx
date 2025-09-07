@@ -1,9 +1,10 @@
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./../context/AuthContext";
 import Middleware from '../middleware';
 import * as Pages from '.';
 import Details from './../Components/Details/Details';
 import ViewProducts from "../Components/ViewProducts/ViewProducts";
+import Cart from "./Cart/Cart";   // ✅ import Cart directly
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/details/:id" element={<Details />} />
           <Route path="/viewProducts" element={<ViewProducts />} />
 
+          {/* Wishlist is protected */}
           <Route
             path="/wishlist"
             element={
@@ -28,17 +30,12 @@ function App() {
               </Middleware>
             }
           />
-          <Route
-            path="/cart"
-            element={
-              <Middleware>
-                <Pages.Cart />
-              </Middleware>
-            }
-          />
+
+          {/* Cart is PUBLIC */}
+          <Route path="/cart" element={<Cart />} />
         </Route>
 
-        {/* Auth Routes Out Layout */}
+        {/* Auth Routes */}
         <Route path="/login" element={<Pages.Login />} />
         <Route path="/register" element={<Pages.Register />} />
 
