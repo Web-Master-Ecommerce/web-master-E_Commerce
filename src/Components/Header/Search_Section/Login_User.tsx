@@ -1,26 +1,67 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../../context/AuthContext";
+import { supabase } from "../../../client";
 
 export default function Login_User() {
+  const { user, setUser } = useAuth();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-const role = 'USER'
+  const handleLogout = async () => {
+    // تسجيل الخروج من Supabase
+    await supabase.auth.signOut();
+    setUser(null);
+    setDropdownOpen(false);
+  };
+
+  if (user) {
+    // بعد تسجيل الدخول: عرض اسم المستخدم فقط
+    return (
+      <div className="flex items-center gap-2 text-green-600 font-medium cursor-pointer ">
+        <span>{user.username}</span>
+        <button
+          onClick={handleLogout}
+          className="p-1 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+        >
+          Logout
+        </button>
+      </div>
+    );
+  }
+
+  
   return (
-    <div className="mr-auto login-icon cursor-pointer w-fit">
-      {/*User Logged*/}
-      {
-          (
-            <div className='flex justify-between md:justify-center items-center'>
-              <div className='flex w-full md:flex-col justify-center items-center gap-1'>
-                <img src={'https://static.vecteezy.com/system/resources/previews/060/423/145/non_2x/business-avatar-icon-with-a-simple-clean-design-featuring-a-man-in-a-suit-suitable-for-online-profiles-or-websites-free-png.png'} alt='user-image' width={50} height={50} />
-                <span >Abdalla</span>
-                <button  className='order-1 md:order-3 p-1 bg-primary text-white rounded cursor-pointer'>Logout</button>
-              </div>
-            </div>
+    <div className="relative w-fit">
+      <div
+        onClick={() => setDropdownOpen(!dropdownOpen)}
+        className="cursor-pointer w-8 h-8 flex justify-center items-center transition-transform duration-300 hover:scale-110"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png"
+          alt="login-icon"
+          className="w-full h-full filter hue-rotate-90"
+        />
+      </div>
 
-          )
-          
-          // <Link to={'/login'} className='cursor-pointer'>
-          //   <icon.IoPersonCircleOutline className='text-[30px] text-primary' />
-          // </Link>
-      }
+      {/* Dropdown */}
+      {dropdownOpen && (
+        <div className="absolute top-full right-0 mt-2 w-32 bg-white shadow-lg rounded flex flex-col overflow-hidden transition-all duration-300 scale-95 origin-top-right z-50">
+          <Link
+            to="/login"
+            className="px-4 py-2 hover:bg-green-100 cursor-pointer transition-colors"
+            onClick={() => setDropdownOpen(false)}
+          >
+            Login
+          </Link>
+          <Link
+            to="/register"
+            className="px-4 py-2 hover:bg-green-100 cursor-pointer transition-colors"
+            onClick={() => setDropdownOpen(false)}
+          >
+            Register
+          </Link>
+        </div>
+      )}
     </div>
-  )
+  );
 }
