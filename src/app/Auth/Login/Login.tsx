@@ -1,5 +1,4 @@
-// src/app/Auth/Login/Login.tsx
-import { useState } from "react";
+import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../../client";
 import { useAuth } from "../../../context/AuthContext";

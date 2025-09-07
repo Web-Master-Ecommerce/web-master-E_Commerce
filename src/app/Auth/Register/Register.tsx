@@ -34,7 +34,7 @@ export default function Register() {
         //  تخزين username في جدول profiles
         const { error: profileError } = await supabase
           .from("profiles")
-          .insert([{ id: data.user.id, username }]); // array مهم
+          .insert([{ id: data.user.id, username }]); 
 
         if (profileError) {
           setMessage("Account created, but failed to save username.");
